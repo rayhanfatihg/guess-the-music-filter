@@ -17,8 +17,8 @@ import requests
 from tqdm import tqdm
 
 # ─── Configuration ────────────────────────────────────────────────────────────
-COVER_DIR = os.path.join(os.path.dirname(__file__), "cover")
-CSV_PATH  = os.path.join(os.path.dirname(__file__), "name.csv")
+COVER_DIR = os.path.join(os.path.dirname(__file__), "assets/cover")
+CSV_PATH  = os.path.join(os.path.dirname(__file__), "assets/name.csv")
 ITUNES_API = "https://itunes.apple.com/search"
 ARTWORK_SIZE = 600          # iTunes returns art up to 600×600
 
@@ -75,6 +75,74 @@ SONGS = [
     ("Lose Yourself",            "Eminem"),
     ("Hotline Bling",            "Drake"),
     ("One Dance",                "Drake"),
+
+    # ── Spanish ───────────────────────────────────────────────────────────────
+    ("Bailando",                 "Enrique Iglesias"),
+    ("Gasolina",                 "Daddy Yankee"),
+    ("Con Calma",                "Daddy Yankee"),
+    ("Mi Gente",                 "J Balvin"),
+    ("Hawai",                    "Maluma"),
+    ("Dakiti",                   "Bad Bunny"),
+    ("La Tortura",               "Shakira"),
+    ("Hips Don't Lie",           "Shakira"),
+    ("Danza Kuduro",             "Don Omar"),
+    ("Taki Taki",                "DJ Snake"),
+
+    # ── Japanese ──────────────────────────────────────────────────────────────
+    ("Lemon",                    "Kenshi Yonezu"),
+    ("Gurenge",                  "LiSA"),
+    ("Pretender",                "Official HIGE DANdism"),
+    ("Nandemonaiya",             "RADWIMPS"),
+    ("Zankyou Sanka",            "Aimer"),
+    ("Cruel Angel Thesis",       "Yoko Takahashi"),
+    ("Blue Bird",                "Ikimono-gakari"),
+    ("Again",                    "YUI"),
+    ("First Love",               "Hikaru Utada"),
+    ("One Last Kiss",            "Hikaru Utada"),
+
+    # ── Anime Openings ────────────────────────────────────────────────────────
+    ("Kaikai Kitan",             "Eve"),
+    ("Guren no Yumiya",          "Linked Horizon"),
+    ("Unravel",                  "TK from Ling Tosite Sigure"),
+    ("Crossing Field",           "LiSA"),
+    ("Peace Sign",               "Kenshi Yonezu"),
+    ("Silhouette",               "KANA-BOON"),
+    ("We Are",                   "Hiroshi Kitadani"),
+    ("Resonance",                "T.M. Revolution"),
+    ("Idol",                     "YOASOBI"),
+    ("Homura",                   "LiSA"),
+
+    # ── Backstreet Boys ───────────────────────────────────────────────────────
+    ("I Want It That Way",       "Backstreet Boys"),
+    ("Everybody",                "Backstreet Boys"),
+    ("As Long As You Love Me",   "Backstreet Boys"),
+    ("Quit Playing Games",       "Backstreet Boys"),
+    ("Shape of My Heart",        "Backstreet Boys"),
+    ("Show Me the Meaning of Being Lonely", "Backstreet Boys"),
+    ("Larger Than Life",         "Backstreet Boys"),
+    ("Incomplete",               "Backstreet Boys"),
+
+    # ── Westlife ──────────────────────────────────────────────────────────────
+    ("Swear It Again",           "Westlife"),
+    ("Flying Without Wings",     "Westlife"),
+    ("My Love",                  "Westlife"),
+    ("Unbreakable",              "Westlife"),
+    ("You Raise Me Up",          "Westlife"),
+    ("World of Our Own",         "Westlife"),
+    ("When You Tell Me That You Love Me", "Westlife"),
+    ("Uptown Girl",              "Westlife"),
+
+    # ── Indonesian ────────────────────────────────────────────────────────────
+    ("Separuh Aku",              "Noah"),
+    ("Sempurna",                 "Andra and the Backbone"),
+    ("Tentang Kamu",             "Rizky Febian"),
+    ("Hati-Hati di Jalan",       "Tulus"),
+    ("Cinta Luar Biasa",         "Andmesh Kamaleng"),
+    ("Yang Terdalam",            "Peterpan"),
+    ("Bukan Cinta Biasa",        "Afgan"),
+    ("Kangen",                   "Dewa 19"),
+    ("Dealova",                  "Once Mekel"),
+    ("Terlalu Lama Sendiri",     "Kunto Aji"),
 ]
 
 # ─── Helpers ─────────────────────────────────────────────────────────────────
