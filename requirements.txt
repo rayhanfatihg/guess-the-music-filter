@@ -1,0 +1,14 @@
+# ─── Core Vision & Face Tracking ─────────────────────────────────────────────
+opencv-python==4.9.0.80          # Camera capture & drawing
+mediapipe==0.10.14               # Face Mesh landmark detection
+
+# ─── Image & Overlay Rendering ───────────────────────────────────────────────
+Pillow==10.3.0                   # Text rendering, image compositing, rounded cards
+numpy==1.26.4                    # Array manipulation for landmark coordinates
+
+# ─── Audio Playback ──────────────────────────────────────────────────────────
+pygame==2.5.2                    # Play song clips & background music
+
+# ─── Scraper Utilities ───────────────────────────────────────────────────────
+requests==2.31.0                 # HTTP downloads for cover art (iTunes API)
+tqdm==4.66.2                     # Progress bar while downloading covers
