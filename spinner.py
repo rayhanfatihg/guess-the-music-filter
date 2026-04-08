@@ -19,6 +19,7 @@ import csv
 import os
 import random
 import time
+from collections import deque
 
 import cv2
 import numpy as np
@@ -79,6 +80,10 @@ class SongSpinner:
         self._result_start: float = 0.0
         self._last_t:      float = time.perf_counter()
 
+        # Better randomization
+        self._rng = random.SystemRandom()  # Cryptographically secure RNG
+        self._history: deque[int] = deque(maxlen=min(10, len(self.songs) // 3))  # Track recent picks
+
     # ── Data loading ──────────────────────────────────────────────────────────
 
     def _load_data(self, csv_path: str, cover_dir: str) -> None:
@@ -104,10 +109,34 @@ class SongSpinner:
 
     # ── Public API ────────────────────────────────────────────────────────────
 
+    def _pick_random_song(self) -> int:
+        """
+        Pick a random song index with better distribution.
+        Avoids recently played songs for variety.
+        """
+        num_songs = len(self.songs)
+        
+        # If we have very few songs, just pick randomly
+        if num_songs <= 3:
+            return self._rng.randrange(num_songs)
+        
+        # Build pool of candidates (exclude recent history)
+        candidates = [i for i in range(num_songs) if i not in self._history]
+        
+        # Fallback: if history is too large, just exclude the last pick
+        if not candidates:
+            candidates = [i for i in range(num_songs) if i != self.selected_idx]
+        
+        # Pick from candidates using secure RNG
+        choice = self._rng.choice(candidates)
+        self._history.append(choice)
+        
+        return choice
+
     def trigger_spin(self) -> None:
         """Trigger spinning. Safe to call from any state."""
         if self.state in (self.IDLE, self.RESULT):
-            self.selected_idx = random.randint(0, len(self.songs) - 1)
+            self.selected_idx = self._pick_random_song()
             self._spin_start  = time.perf_counter()
             self._spin_pos    = float(self.display_idx)
             self.state        = self.SPINNING
