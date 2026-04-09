@@ -12,3 +12,8 @@ pygame==2.5.2                    # Play song clips & background music
 # ─── Scraper Utilities ───────────────────────────────────────────────────────
 requests==2.31.0                 # HTTP downloads for cover art (iTunes API)
 tqdm==4.66.2                     # Progress bar while downloading covers
+
+# ─── Streamlit Deployment ────────────────────────────────────────────────────
+streamlit                        # Web app framework
+streamlit-webrtc                 # WebRTC camera access
+av                               # Video/Audio processing for WebRTC
