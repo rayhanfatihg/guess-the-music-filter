@@ -1,5 +1,5 @@
 # ─── Core Vision & Face Tracking ─────────────────────────────────────────────
-opencv-python==4.9.0.80          # Camera capture & drawing
+opencv-python-headless        # Camera capture & drawing
 mediapipe==0.10.14               # Face Mesh landmark detection
 
 # ─── Image & Overlay Rendering ───────────────────────────────────────────────
